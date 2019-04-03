@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tput cup 0 0;
+
+(echo l STRENGTH ; sleep .1) | telnet 127.0.0.1 7356 | sed '4q;d' > rf_strength;
+
+# Signal Strength Recorded to 'rf_strength'

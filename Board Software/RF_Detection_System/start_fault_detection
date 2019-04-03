@@ -1,0 +1,16 @@
+#!/bin/bash
+
+gcc ~/Desktop/RF_Detection_System/RF_Detection_System_Driver.c -o ~/Desktop/RF_Detection_System/RF_Detection_System_Driver
+
+sleep 15s
+gqrx &
+(sleep 5s
+xdotool key KP_Enter
+sleep .5s
+xdotool key KP_Enter
+sleep 3s
+xdotool key "ctrl+d"
+sleep 3s
+echo "F 30600000" | telnet 127.0.0.1 7356
+cd ~/Desktop/RF_Detection_System
+xterm -hold -e ./RF_Detection_System_Driver)
